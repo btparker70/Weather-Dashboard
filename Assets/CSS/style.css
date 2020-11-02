@@ -1,0 +1,24 @@
+#main {
+    position: relative;
+    margin-bottom: 10px;
+    min-height: 700px;
+}
+#main-row {
+    /* min-height: 700px; */
+    /* margin-bottom: 0px; */
+    position: relative;
+    margin-bottom: 10px;
+    min-height: 700px;
+}
+
+#searchTab {
+    min-height: 100%;
+}
+
+#cityTab {
+    min-height: 60%;
+}
+
+#forecastTab {
+    min-height: 40%;
+}
