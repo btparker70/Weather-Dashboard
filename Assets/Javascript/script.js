@@ -34,7 +34,35 @@ $('#searchBtn').click(function () {
     $('#tempDisplay').text('Temperature: ' + (Math.floor((response.current.temp) - 273.15) * 1.80 + 32) + 'F');
     $('#humidityDisplay').text('Humidity: ' + response.current.humidity + '%');
     $('#windSpeedDisplay').text('Wind Speed: ' + Math.floor(response.current.wind_speed * 1.151) + 'mph');
-    $('#uvIndexDisplay').text('UV Index: ' + response.current.uvi);
+    $('#uvIndexDisplay').text('UV Index: ');
+    var uvHoverText = '';
+    var uvText = $('<p>' + response.current.uvi + '</p>').css('display', 'inline');
+    if (response.current.uvi < 3) {
+      uvText.css('background-color', 'green');
+      $('#uvIndexDisplay').append(uvText);
+      uvHoverText = 'Low';
+    } else if (3 <= response.current.uvi < 6) {
+      uvText.css('background-color', 'yellow');
+      $('#uvIndexDisplay').append(uvText);
+      uvHoverText = 'Moderate';
+    } else if (6 <= response.current.uvi < 8) {
+      uvText.css('background-color', 'orage');
+      $('#uvIndexDisplay').append(uvText);
+      uvHoverText = 'High';
+    } else if (8 <= response.current.uvi < 11) {
+      uvText.css('background-color', 'red');
+      $('#uvIndexDisplay').append(uvText);
+      uvHoverText = 'Very High';
+    } else {
+      uvText.css('background-color', 'violet');
+      $('#uvIndexDisplay').append(uvText);
+      uvHoverText = 'Extreme';
+    }
+    $('#uvIndexDisplay').hover(function() {
+      $(this).css('cursor', 'pointer').attr('title', uvHoverText);
+    }, function () {
+      $(this).css('cursor', 'auto');
+    })
     // Forecast display
     
     for (i = 0; i < 5; i++) {
