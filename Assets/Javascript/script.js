@@ -25,15 +25,36 @@ $('#searchBtn').click(function () {
     method: "GET"
   }).then(function (response) {
     console.log(response);
-    $('#cityNameDisplay').text('City: ' + cityName);
-    $('#tempDisplay').text('Temperature: ' + response.current.temp);
-    $('#humidityDisplay').text('Humidity: ' + response.current.humidity);
-    $('#windSpeedDisplay').text('Wind Speed: ' + response.current.wind_speed);
+    // Current city data display
+    var iconCode = response.current.weather[0].icon;
+    console.log(iconCode);
+    var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+    var imgDiv = $('<img>').attr('src', iconUrl);
+    $('#cityNameDisplay').text('City: ' + cityName).append(imgDiv);
+    $('#tempDisplay').text('Temperature: ' + (Math.floor((response.current.temp) - 273.15) * 1.80 + 32) + 'F');
+    $('#humidityDisplay').text('Humidity: ' + response.current.humidity + '%');
+    $('#windSpeedDisplay').text('Wind Speed: ' + Math.floor(response.current.wind_speed * 1.151) + 'mph');
     $('#uvIndexDisplay').text('UV Index: ' + response.current.uvi);
+    // Forecast display
+    
+    for (i = 0; i < 5; i++) {
+      // var display = $('<div/>');
+      // $('#day'+ i +'').append(display);
+      $('#day'+ i +'').text(moment().add(i + 1, 'days').format('MM/DD/YYYY'));
+      $('#day'+ i +'').append('<br>');
+      var iconCode = response.daily[i].weather[0].icon;
+      var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+      var imgDiv = $('<img>').attr('src', iconUrl);
+      $('#day'+ i +'').append('<img src=' + iconUrl +' />');
+      $('#day'+ i +'').append( '<p>' + 'Temperature: ' + (Math.floor((response.daily[i].temp.day) - 273.15) * 1.80 + 32) + 'F' + '</p>')
+      $('#day'+ i +'').append( '<p>' + 'Humidity: ' + response.daily[i].humidity + '%' + '</p>')
+    }
+
   })
 
   })
 })
+
   // $.ajax({
   //   url: cityURL,
   //   method: "GET"

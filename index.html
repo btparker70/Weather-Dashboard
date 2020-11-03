@@ -24,7 +24,8 @@
     <main class="container-fluid" id='main'>
         <div class='row' id='main-row'>
             <!-- Left div -->
-            <div class='col-md-4 col-lg-3' id='searchTab' style='background-color: rgb(190, 210, 246); width:fit-content'>
+            <div class='col-md-4 col-lg-3' id='searchTab'
+                style='background-color: rgb(190, 210, 246); width:fit-content'>
                 <!-- Search bar -->
                 <div class="input-group mb-3">
                     <input id='searchInput' type="text" class="form-control" placeholder="City Name">
@@ -51,10 +52,12 @@
                 </div>
                 <!-- Forecast -->
                 <div class='row' id='forecastTab' style='background-color: rgb(208, 255, 206);'>
-                    <div class='col'>
-                        <h2>5-day Forecast:</h2>
-                        <div id='forecastDisplay'></div>
-                    </div>
+                    <h2>5-day Forecast:</h2>
+                    <div class='col-2' id='day0' style='background-color: rgb(203, 203, 251);'></div>
+                    <div class='col-2' id='day1' style='background-color: rgb(203, 203, 251);'></div>
+                    <div class='col-2' id='day2' style='background-color: rgb(203, 203, 251);'></div>
+                    <div class='col-2' id='day3' style='background-color: rgb(203, 203, 251);'></div>
+                    <div class='col-2' id='day4' style='background-color: rgb(203, 203, 251);'></div>
                 </div>
             </div>
         </div>
@@ -63,7 +66,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="Assets/Javascript/script.js"></script>
-    <!-- <script src="assets/lib/moment/moment.js"></script> -->
+    <script src="Assets/lib/moment/moment.js"></script>
 </body>
 
 </html>
