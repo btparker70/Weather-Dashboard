@@ -37,7 +37,7 @@
                 <ul class='list-group' id='searchList'></ul>
             </div>
             <!-- Displayed city -->
-            <div class='col-md-8 col-lg-9'>
+            <div class='col'>
                 <div class='row'>
                     <div class='card' id='currentWeatherDisplay' style="display: none">
                         <h2 id='cityNameDisplay'></h2>
@@ -50,12 +50,26 @@
                         <br>
                         <h3 id='uvIndexDisplay'></h3>
                     </div>
+                    <!-- Map -->
+                    <div class='card text-center col-spaced' style="display: block">
+                        <h3>Regional Temperature</h3>
+                        <br>
+                        <div class='card-body' id='temperatureMap'></div>
+                    </div>
+                    <div class='card text-center col-spaced' style="display: block">
+                        <h3>Regional Percipitation</h3>
+                        <br>
+                        <div class='card-body' id='percipitationMap'></div>
+                    </div>
+                    <div class='card text-center col-spaced' style="display: block">
+                        <h3>Regional Wind</h3>
+                        <br>
+                        <div class='card-body' id='windMap'></div>
+                    </div>
                 </div>
                 <!-- Forecast -->
                 <div class='row' id='forecastTab' style='display: none'>
                     <div class='col'>
-                        <h2>5-day Forecast:</h2>
-
                         <div class='row'>
                             <div class='col-2 text-center card col-spaced fluid' id='day0Head'>
                                 <div class='card-body' id='day0'></div>
