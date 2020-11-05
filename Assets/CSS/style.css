@@ -37,3 +37,7 @@ body {
 #currentWeatherDisplay {
     padding: 10px;
 }
+
+.mapDiv {
+    display: none;
+}

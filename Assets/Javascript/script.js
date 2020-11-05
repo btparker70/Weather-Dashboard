@@ -10,6 +10,7 @@ $('#clearBtn').on('click', function() {
   $('#searchList').empty();
   localStorage.clear();
   location.reload();
+  $('#clearBtn').css('display', 'none')
 })
 
 // When list items are clicked
@@ -69,6 +70,9 @@ $('#searchBtn').click(function () {
     var newSearchItem = $('<li/>').attr('class', 'list-group-item active span').attr('id', cityName);
     newSearchItem.text(cityName);
     $('#searchList').prepend(newSearchItem);
+    if ($('#clearBtn').css('display') == ('none')) {
+      $('#clearBtn').css('display', 'block')
+    }
 
     dataRender(cityName);
 
@@ -83,6 +87,7 @@ function renderSavedCities() {
     var newSearchItem = $('<li/>').attr('class', 'list-group-item').attr('id', cityName);
     newSearchItem.text(cityName);
     $('#searchList').prepend(newSearchItem);
+    $('#clearBtn').css('display', 'block')
   }
 }
 renderSavedCities()
@@ -111,6 +116,7 @@ function dataRender(cityName) {
       method: "GET"
     }).then(function (response) {
       // Current city data display
+      $('#currentWeatherBlock').css('display', 'block');
       var iconCode = response.current.weather[0].icon;
       var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
       var imgDiv = $('<img>').attr('src', iconUrl);
@@ -190,6 +196,7 @@ function dataRender(cityName) {
         var url = 'https://tile.openweathermap.org/map/' + layer + '/' + zoom + '/' + lonTile + '/' + latTile + '.png?appid=' + apiKey;
         var mapImg = $('<img>').attr('src', url);
         $('#' + divID).empty();
+        $('.mapDiv').css('display', 'block');
         $('#' + divID).append(mapImg);
       }
     })
