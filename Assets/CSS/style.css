@@ -24,3 +24,15 @@
 #forecastTab {
     min-height: 40%;
 }
+
+.col-spaced {
+    margin-left: 15px;
+}
+
+body {
+    background-color: rgb(190, 210, 246);
+}
+
+#currentWeatherDisplay {
+    padding: 10px;
+}

@@ -38,27 +38,42 @@
             </div>
             <!-- Displayed city -->
             <div class='col-md-8 col-lg-9'>
-                <div class='row' id='cityTab' style='background-color: rgb(255, 192, 192);'>
-                    <div class='col'>
-                        <h2 id='cityNameDisplay'>City: </h2>
+                <div class='row'>
+                    <div class='card' id='currentWeatherDisplay' style="display: none">
+                        <h2 id='cityNameDisplay'></h2>
                         <br>
-                        <h3 id='tempDisplay'>Temperature: </h3>
+                        <h3 id='tempDisplay'></h3>
                         <br>
-                        <h3 id='humidityDisplay'>Humidity: </h3>
+                        <h3 id='humidityDisplay'></h3>
                         <br>
-                        <h3 id='windSpeedDisplay'>Wind Speed: </h3>
+                        <h3 id='windSpeedDisplay'></h3>
                         <br>
-                        <h3 id='uvIndexDisplay'>UV Index: </h3>
+                        <h3 id='uvIndexDisplay'></h3>
                     </div>
                 </div>
                 <!-- Forecast -->
-                <div class='row' id='forecastTab' style='background-color: rgb(208, 255, 206);'>
-                    <h2>5-day Forecast:</h2>
-                    <div class='col-2' id='day0' style='background-color: rgb(203, 203, 251);'></div>
-                    <div class='col-2' id='day1' style='background-color: rgb(203, 203, 251);'></div>
-                    <div class='col-2' id='day2' style='background-color: rgb(203, 203, 251);'></div>
-                    <div class='col-2' id='day3' style='background-color: rgb(203, 203, 251);'></div>
-                    <div class='col-2' id='day4' style='background-color: rgb(203, 203, 251);'></div>
+                <div class='row' id='forecastTab' style='display: none'>
+                    <div class='col'>
+                        <h2>5-day Forecast:</h2>
+
+                        <div class='row'>
+                            <div class='col-2 text-center card col-spaced fluid' id='day0Head'>
+                                <div class='card-body' id='day0'></div>
+                            </div>
+                            <div class='col-2 text-center card col-spaced' id='day1Head'>
+                                <div class='card-body' id='day1'></div>
+                            </div>
+                            <div class='col-2 text-center card col-spaced' id='day2Head'>
+                                <div class='card-body' id='day2'></div>
+                            </div>
+                            <div class='col-2 text-center card col-spaced' id='day3Head'>
+                                <div class='card-body' id='day3'></div>
+                            </div>
+                            <div class='col-2 text-center card col-spaced' id='day4Head'>
+                                <div class='card-body' id='day4'></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
