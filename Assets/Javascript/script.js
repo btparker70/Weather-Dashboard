@@ -5,6 +5,12 @@ var cityName = '';
 var lat = 0;
 var lon = 0;
 
+// Clear All button
+$('#clearBtn').on('click', function() {
+  $('#searchList').empty();
+  localStorage.clear();
+  location.reload();
+})
 
 // When list items are clicked
 $('#searchList').on('click', '.list-group-item', function () {
@@ -60,7 +66,7 @@ $('#searchBtn').click(function () {
 
 
     // Create new list item
-    var newSearchItem = $('<li/>').attr('class', 'list-group-item active').attr('id', cityName);
+    var newSearchItem = $('<li/>').attr('class', 'list-group-item active span').attr('id', cityName);
     newSearchItem.text(cityName);
     $('#searchList').prepend(newSearchItem);
 
@@ -90,9 +96,9 @@ function dataRender(cityName) {
   $.ajax({
     url: cityURL,
     method: "GET",
-    error: function () {
-      alert('Not a city...');
-    }
+    // error: function () {
+    //   alert('Not a city...');
+    // }
   }).then(function (response) {
 
     var lat = response.coord['lat'];
