@@ -10,28 +10,36 @@ Thanks for visiting! My name is Brian and I am a web development student through
 # Weather-Dashboard
 A simple webpage that retrieves city weather data and provides a 5-day forecast
 
-![screenshot](https://github.com/btparker70/Daily-Planner/blob/main/assets/images/cover.png?raw=true)
+![screenshot](https://github.com/btparker70/Weather-Dashboard/blob/main/Assets/Images/mainscreen.png?raw=true)
 
 # Table of Contents
 
-* [Usage](#Usage)
 * [Webpage Link](#Webpage-Link)
+* [Usage](#Usage)
 * [What I learned](#What-I-Learned)
 * [Credits](#Credits)
 * [License](#License)
 
-# Usage
-Find a time slot to enter a task. Click the 'edit' button to the right to allow text editing of the time block. After entering text, click the 'edit' button again to save. All time slots are color-coded. Gray means the hour has passed, red represents the present hour and green is the future.
-
 # Webpage Link
 
-https://btparker70.github.io/Daily-Planner/
+https://btparker70.github.io/Weather-Dashboard/
+
+# Usage
+Enter the name of a city in the search bar. The current weather will be display along with regional map data for temperature, percipitation and winds. 
+
+![screenshot](https://github.com/btparker70/Weather-Dashboard/blob/main/Assets/Images/current.png?raw=true)
+
+At the bottom, you will also see a 5-day forecast for the city. 
+
+![screenshot](https://github.com/btparker70/Weather-Dashboard/blob/main/Assets/Images/forecast.png?raw=true)
+
+Enter more cities and they will be saved for future use.
+
+![screenshot](https://github.com/btparker70/Weather-Dashboard/blob/main/Assets/Images/searches.png?raw=true)
 
 # What I learned
 
-This project was my first time using the moment.js library. This simple and intuitive library allowed me to find the current time and date. Using moment.js I was able to configure the colorizing functionality and render the current date at the top of the page.
-
-The biggest challenge I faced with this project was working with the AM/PM time format. With a 24-hour time format, it's easy to loop through the hours and impliment functionality. With 2 12-hour blocks it added a layer of complexity I wasn't expecting. 
+This was my first project using API's and ajax calls. Figuring out I could make a call within another call was the biggest roadblock I had. I enjoyed reading the documentation and learning how to use OpenWeatherMap's api's. What was fun for me was exploring the map feature and figuring out how to get the current city data for them. I learned that there's a grid system for the Earth, where based on a 'zoom' level, the map is split into a grid. I had to convert the latitude and longitude to this grid system and this required some digging around until I found a few conversion functions. Needless to say, I was excited when it started working!
 
 # Credits
 Thank you for your help along the way!
