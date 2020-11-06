@@ -1,43 +1,45 @@
+body {
+    background-color: rgb(190, 210, 246);
+}
+
+/* Main div */
 #main {
     position: relative;
     margin-bottom: 10px;
     min-height: 700px;
 }
+
+/* Main div */
 #main-row {
-    /* min-height: 700px; */
-    /* margin-bottom: 0px; */
     position: relative;
     margin-bottom: 10px;
     min-height: 700px;
 }
 
+/* Search div */
 #searchTab {
     min-height: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-#cityTab {
-    min-height: 60%;
-}
-
+/* Forecast div*/
 #forecastTab {
     margin-top: 15px;
     min-height: 40%;
 }
 
+/* General column spacing */
 .col-spaced {
     margin-left: 15px;
 }
 
-body {
-    background-color: rgb(190, 210, 246);
-}
-
+/* Current weather div */
 #currentWeatherDisplay {
     padding: 10px;
 }
 
+/* Map div */
 .mapDiv {
     display: none;
 }
